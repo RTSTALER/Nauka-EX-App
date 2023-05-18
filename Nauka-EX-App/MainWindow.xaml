@@ -3,12 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Nauka_EX_App"
+        xmlns:control = "clr-namespace:Nauka_EX_App" 
         mc:Ignorable="d"
-        Title="Табель" Height="450" Width="800">
+        Title="Табель" Height="450" Width="1000">
     <Grid>
-        <GroupBox Header="Департаменты" Margin="0,0,0,4" HorizontalAlignment="Left" Width="177">
-            <ListView d:ItemsSource="{d:SampleData ItemCount=15}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="12*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Департаменты" Margin="0,0,0,4">
+            <ListView x:Name="depatrList" SelectionChanged="depatrList_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
@@ -16,42 +20,44 @@
                 </ListView.View>
             </ListView>
         </GroupBox>
-        <TabControl Margin="182,0,10,80">
+        <TabControl Margin="4,0,10,10" Grid.Column="1" Background="White">
             <TabItem Header="Январь">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5" Width="Auto">
+                    <control:ReportCardControl DepartamentID="22" Width="Auto"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Февраль">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Март">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Апрель">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Май">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Июнь">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Июль">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Август">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Сентябрь">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Октябрь">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Ноябрь">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
             <TabItem Header="Декабрь">
-                <Grid Background="#FFE5E5E5" HorizontalAlignment="Right" Width="602"/>
+                <Grid Background="#FFE5E5E5" Width="Auto"/>
             </TabItem>
         </TabControl>
     </Grid>

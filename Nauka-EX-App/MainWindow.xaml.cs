@@ -23,6 +23,13 @@ namespace Nauka_EX_App
         public MainWindow()
         {
             InitializeComponent();
+            List<string> depts = new List<string>() { "Test1", "Test2", "Test3" };
+            depatrList.ItemsSource = depts;
+        }
+
+        private void depatrList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show(depatrList.SelectedIndex.ToString() + " name " + depatrList.Items[depatrList.SelectedIndex].ToString());
         }
     }
 }
